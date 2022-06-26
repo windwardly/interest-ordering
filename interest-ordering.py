@@ -25,6 +25,9 @@ def play_out(income, spend, interest, inrates, outrates):
     return savings
 
 # encapsulate python formatting
+def format_money(amount):
+    return '${:,.2f}'.format(amount)
+
 def format_list(list):
     return ', '.join(['{:.2f}'.format(rate) for rate in list])
 
@@ -77,12 +80,16 @@ for interest in savings_rates:
     print()
     print("Interest", '{:.2f}%'.format(interest))
     for (scenario, inrates, outrates) in strategies:
-        print (scenario, '${:,.2f}'.format(play_out(income, spend, interest, inrates, outrates)))
+        print (scenario, format_money(play_out(income, spend, interest, inrates, outrates)))
 print()
-print("Removing Baumol effect (spending inflation = income inflation)")
+print("Show what it is like to have same inflation rates")
+print("Same: spending inflation set equal to income inflation")
+print("Different: the above 'Unsorted' case where inflation rates are different")
 for interest in savings_rates:
     print()
     print("Interest", '{:.2f}%'.format(interest))
-    for (scenario, inrates, outrates) in strategies:
-        print (scenario, '${:,.2f}'.format(play_out(income, spend, interest, inrates, inrates)))
+    different = play_out(income, spend, interest, income_rate, spending_rate)
+    same = play_out(income, spend, interest, income_rate, income_rate)
+    print("same rates minus different rates = extra savings")
+    print(format_money(same), '-', format_money(different), '=', format_money(same-different))
 print()
