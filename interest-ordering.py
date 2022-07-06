@@ -8,8 +8,8 @@
 # any sorting of inrates and outrates, because it is just multiplying
 # all the rates together times initial income or spending.
 def play_out(income, spend, interest, inrates, outrates):
-    monthly_savings_interest = 1.0 + (interest / (12.0 * 100.0));
-    savings = 0.0;
+    monthly_savings_interest = 1.0 + (interest / (12.0 * 100.0))
+    savings = 0.0
     for year in range(len(inrates)):
         # print("inrates", (inrates[year] / 100.0))
         income *= 1.0 + (inrates[year] / 100.0)
