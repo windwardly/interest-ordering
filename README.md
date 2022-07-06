@@ -8,10 +8,12 @@ for delaying income advance in the face of rising costs.
 
 Initial conditions: a base monthly income and a base monthly level of expenditures.
 
-Two arrays: The annual rate of pay increase and spending increase cumulatively applied
-the inital base rates.
+Two arrays: The annual rates of pay increases and spending increases.
 
 A savings account that has a fixed (ie, unrealistic) annual interest rate, compounded monthly.
+
+## Simulation
+Apply rate increases to pay and spending, then take the difference between income and spending and put it in a savings account.
 
 ## The outcome
 
@@ -25,9 +27,10 @@ Actual: use the arrays as listed.
 
 ## Additionally: the Baumol Effect
 
-The Baumol Effect is experienced by certain organizations and populations that experience inflation and a higher rate than the average organization or
+The Baumol Effect impacts certain organizations and populations that experience inflation at higher rate than the average organization or
 population.
 
-The impact is the magic of compound interest in reverse.
+The impact is compound interest in reverse.
 
 In the model, this can be explored by having the two arrays be the same or different.
+A small difference in average rate (1%) makes a difference, especially when combined with a delay in wage increase relative to cost increases.
